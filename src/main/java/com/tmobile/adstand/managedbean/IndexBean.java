@@ -51,7 +51,7 @@ public class IndexBean {
         this.wsClient = wsClient;
 ////        this.messageListener = messageListener;
 //
-        downloadTariffs();
+        //downloadTariffs();
     }
 
     public void update() {

@@ -20,8 +20,8 @@ import java.util.List;
 @Named
 public class WebServiceClient {
 
-    private final String TARRIFFS_URL = "http://localhost:8080/TMobile/tariffs";
-    private final String OPTIONS_URL = "http://localhost:8080/TMobile/options/{0}";
+    private final String TARRIFFS_URL = "http://t-mobile:8080/TMobile/tariffs";//t-mobile
+    private final String OPTIONS_URL = "http://t-mobile:8080/TMobile/options/{0}";//t-mobile
 
     public List<TariffDTO> getTariffs() {
         List<TariffDTO> tariffs = new ArrayList<>();

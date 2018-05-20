@@ -97,7 +97,7 @@
                                 </goals>
                                 <phase>package</phase>
                                 <configuration>
-                                    <workingDirectory>../TMobileAdStand</workingDirectory>
+                                    <workingDirectory>./</workingDirectory>
                                     <executable>docker-compose</executable>
                                     <arguments>
                                         <argument>up</argument>

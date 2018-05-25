@@ -21,6 +21,17 @@
             <artifactId>javax.ejb-api</artifactId>
             <version>3.2.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>2.6.9</version>
+        </dependency>
+        <dependency>
+            <groupId>net.bootsfaces</groupId>
+            <artifactId>bootsfaces</artifactId>
+            <version>1.2.0</version>
+            <!--<scope>compile</scope>-->
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>com.rabbitmq</groupId>-->
             <!--<artifactId>amqp-client</artifactId>-->
@@ -77,41 +88,6 @@
 
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>docker-compose</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.4.0</version>
-                        <executions>
-                            <execution>
-                                <id>docker-compose</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <phase>package</phase>
-                                <configuration>
-                                    <workingDirectory>./</workingDirectory>
-                                    <executable>docker-compose</executable>
-                                    <arguments>
-                                        <argument>up</argument>
-                                        <argument>-d</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <build>
         <finalName>TMobileAdStand</finalName>
         <plugins>
@@ -122,17 +98,17 @@
                      <failOnMissingWebXml>false</failOnMissingWebXml>
                  </configuration>-->
             </plugin>
-            <plugin>
-                <groupId>org.wildfly.plugins</groupId>
-                <artifactId>wildfly-maven-plugin</artifactId>
-                <version>1.2.1.Final</version>
-                <configuration>
-                    <hostname>localhost</hostname>
-                    <port>9990</port>
-                    <username>admin</username>
-                    <password>qwerty</password>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.wildfly.plugins</groupId>-->
+                <!--<artifactId>wildfly-maven-plugin</artifactId>-->
+                <!--<version>1.2.1.Final</version>-->
+                <!--<configuration>-->
+                    <!--<hostname>localhost</hostname>-->
+                    <!--<port>9990</port>-->
+                    <!--<username>admin</username>-->
+                    <!--<password>qwerty</password>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 

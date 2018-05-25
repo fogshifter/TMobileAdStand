@@ -15,26 +15,45 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>Faces Servlet</servlet-name>-->
+        <!--<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
 
     <!--<servlet-mapping>-->
         <!--<servlet-name>Faces Servlet</servlet-name>-->
         <!--<url-pattern>/faces/*</url-pattern>-->
     <!--</servlet-mapping>-->
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>Faces Servlet</servlet-name>-->
-        <!--<url-pattern>*.jsf</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>TMobileAdStandServlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+        <url-pattern>/javax.faces.resource/*</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>TMobileAdStandServlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
-
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>Faces Servlet</servlet-name>-->
+        <!--<url-pattern>*.xhtml</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <context-param>
-        <param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
-        <param-value>false</param-value>
+        <param-name>BootsFaces_USETHEME</param-name>
+        <param-value>true</param-value>
     </context-param>
+
+    <context-param>
+        <param-name>BootsFaces_THEME</param-name>
+        <param-value>cerulean</param-value>
+    </context-param>
+
+    <!--<context-param>-->
+        <!--<param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>-->
+        <!--<param-value>false</param-value>-->
+    <!--</context-param>-->
 
 </web-app>

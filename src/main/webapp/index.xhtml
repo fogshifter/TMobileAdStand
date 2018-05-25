@@ -1,26 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world TMobileAdStand: #{index.nameTest}"/>
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
 
-    <ui:repeat var="tariff" value="#{index.tariffs}" varStatus="status">
+<h:outputText value = "tariffs count: #{index.tariffs.size()}" />
 
-        <div>
-            <span>#{tariff.name}</span>
-            <span>#{tariff.description}</span>
-            <span>#{tariff.price}</span>
-        </div>
+
+    <ui:repeat value="#{index.tariffs}" var="tariff">
+
+        <h:outputText value = "-------------------------" />
+        <h:outputText value = "id: #{tariff.id}" />
+        <h:outputText value = "name: #{tariff.name}" />
+        <h:outputText value = "description: #{tariff.description}" />
+        <h:outputText value = "price: #{tariff.price}" />
+        <h:outputText value = "-------------------------" />
 
     </ui:repeat>
-</f:view>
+
+    <!--<b:buttonGroup>-->
+        <!--<b:button value="Left" />-->
+        <!--<b:button value="Middle" />-->
+        <!--<b:button value="Right" />-->
+    <!--</b:buttonGroup>-->
+
+    <b:carousel id="tiovivo" style="width:800px" interval="2500">
+        <b:carouselItem >
+            <h:graphicImage name="images/finger_bg.jpg" />
+            <!--<img src="images/finger_bg.png" alt="Valladolid" style="width: 800px; height: 600px" />-->
+            <b:carouselCaption>
+                <h2>You'll love Valladolid!</h2>
+                <p>The band reads <a style="color:#fff" href="">"Non plus ultra"</a>, being Spains' motto in 1492, when Columbus made his discoveries.</p>
+            </b:carouselCaption>
+        </b:carouselItem>
+        <b:carouselItem caption="Valladolid has a nice central park.">
+            <h:graphicImage name="images/retard_bg.jpg"/>
+        </b:carouselItem>
+        <b:carouselItem caption="Ain't he a beauty?">
+            <img src="orange_bg.png" alt="Valladolid" style="width: 800px; height: 600px" />
+        </b:carouselItem>
+        <b:carouselItem>
+            <img src="town_bg.png" alt="Valladolid" style="width: 800px; height: 600px" />
+            <b:carouselCaption>
+                <h2>Fountains</h2>
+                <p>In Spain, dry as it is, people love to play with water.</p>
+            </b:carouselCaption>
+        </b:carouselItem>
+        <b:carouselItem caption="Valladolid - a city with a lot of history">
+            <img src="world1_bg.png" alt="Valladolid" style="width: 800px; height: 600px" />
+        </b:carouselItem>
+    </b:carousel>
+</h:body>
 
 <script type="text/javascript">
-    var host = 'ws://localhost:8080/TMobileAdStand/websocket'
+    var host = 'ws://localhost:8180/TMobileAdStand/websocket'
     var socket = new WebSocket(host)
 
     socket.onopen = function() {

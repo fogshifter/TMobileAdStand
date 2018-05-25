@@ -2,6 +2,7 @@ package com.tmobile.adstand.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class TariffDTO {
     private int id;
@@ -50,5 +51,23 @@ public class TariffDTO {
 
     public void setCompatibleOptions(List<Integer> compatibleOptions) {
         this.compatibleOptions = compatibleOptions;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TariffDTO)) return false;
+        TariffDTO tariffDTO = (TariffDTO) o;
+        return id == tariffDTO.id &&
+                price == tariffDTO.price &&
+                Objects.equals(name, tariffDTO.name) &&
+                Objects.equals(description, tariffDTO.description) &&
+                Objects.equals(compatibleOptions, tariffDTO.compatibleOptions);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, name, description, price, compatibleOptions);
     }
 }

@@ -51,8 +51,6 @@ import java.util.Hashtable;
 @Singleton
 public class TMobileMessageListener {
 
-    private final String activeMqHost = "tcp://t-activemq:61616";//"tcp://localhost:61616";
-
 //    private IndexBean indexBean;
     private Connection connection;
     private Session session;
@@ -79,7 +77,7 @@ public class TMobileMessageListener {
 ////            new ActiveMQConnectiveFactory
 //            TopicConnectionFactory topicCF = (TopicConnectionFactory) context.lookup("topicCF");
 //            context.lo
-            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(activeMqHost);
+            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
             connection = connectionFactory.createConnection();
             connection.setClientID("tmobile-ad-listener");
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
